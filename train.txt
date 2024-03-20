@@ -1,0 +1,7 @@
+python -m torch.distributed.launch --nproc_per_node=8 train.py \
+--model tip_b0 --img_size 224 --drop_path 0.1 \
+--epochs 300 --batch_size 128 --lr 1e-3 --weight_decay 0.04 \
+--aa rand-m7-mstd0.5-inc1 --crop_pct 0.9 --mixup 0.1 \
+--amp --native_amp \
+--data_dir /path/to/imagenet-1k \
+--experiment /path/to/save_results
